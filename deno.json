@@ -1,0 +1,19 @@
+{
+  "tasks": {
+    "cache": "deno cache _config.ts",
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "build": "deno task lume",
+    "serve": "deno task lume -s",
+    "upgrade": "deno task lume upgrade"
+  },
+  "imports": {
+    "$/": "./src/",
+    "lume/": "https://deno.land/x/lume@v2.2.4/"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:preact",
+    "types": ["lume/types.ts"]
+  },
+  "unstable": ["temporal"]
+}

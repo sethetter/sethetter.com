@@ -1,0 +1,282 @@
+@import "normalize.css";
+@import "prism-duotone-light.css";
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato"), url("/fonts/Lato-Regular.ttf");
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato"), url("/fonts/Lato-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Source Serif Pro";
+  src: local("Source Serif Pro"), url("/fonts/SourceSerifPro-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Serif Pro";
+  src: local("Source Serif Pro"), url("/fonts/SourceSerifPro-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Serif Pro";
+  src: local("Source Serif Pro"), url("/fonts/SourceSerifPro-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Serif Pro";
+  src: local("Source Serif Pro"), url("/fonts/SourceSerifPro-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/**
+ * everforest (https://github.com/sainnhe/everforest)
+ */
+:root {
+  --color-bg: #fdf6e3;
+  --color-fg: #5c6a72;
+  --color-blue: #3a94c5;
+  --color-statusline2: #708089;
+  --color-green: #8da101;
+  --color-gray0: #a6b0a0;
+  --color-gray1: #eeeeee;
+  --color-gray2: #829181;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #2d353b;
+    --color-fg: #d2c6aa;
+    --color-blue: #7fbbb3;
+    --color-statusline2: #d3c6aa;
+    --color-green: #a7c080;
+    --color-gray0: #7a8478;
+    --color-gray1: #555555;
+    --color-gray2: #9da9a0;
+  }
+}
+
+ul.post-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+ul.post-list li {
+  margin-bottom: 6px;
+}
+
+ul.post-list li a {
+  text-decoration: none;
+}
+
+ul.post-list li em {
+  color: var(--color-gray0);
+}
+
+ul.post-list li .subtext::before {
+  content: " —  ";
+  font-size: 0.8em;
+  color: var(--color-gray0);
+}
+
+@media (max-width: 600px) {
+  ul.post-list li .subtext::before {
+    content: "";
+  }
+
+  ul.post-list li .subtext {
+    display: block;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: Lato, "Source Sans Pro", sans;
+  font-size: 18px;
+  line-height: 1.5em;
+  margin: 0px auto 0px auto;
+  padding: 0 15px;
+  max-width: 700px;
+}
+
+#content article .body {
+  font-family: "Source Serif Pro", sans;
+}
+
+a,
+a:visited {
+  color: var(--color-green);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-blue);
+}
+
+div#header {
+  border-bottom: 1px solid var(--color-gray0);
+  margin-bottom: 30px;
+  padding: 12px 0px 12px 0px;
+  display: flex;
+}
+
+div#logo,
+div#navigation {
+  flex-grow: 1;
+}
+
+div#logo a {
+  float: left;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+div#header div#logo a,
+div#header div#logo a:visited {
+  color: var(--color-gray2);
+}
+
+div#header a,
+div#header a:visited {
+  color: var(--color-green);
+}
+
+div#header a:active,
+div#header a:hover {
+  color: var(--color-blue);
+}
+
+div#header #navigation {
+  text-align: right;
+}
+
+div#header #navigation ul {
+  list-style: none;
+  margin: 0;
+}
+
+div#header #navigation ul li {
+  display: inline;
+}
+
+div#header #navigation a {
+  font-size: 16px;
+  margin-left: 12px;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+#footer {
+  border-top: solid 1px var(--color-gray0);
+  color: var(--color-gray2);
+  font-size: 12px;
+  margin-top: 30px;
+  padding: 12px 0px 12px 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Lato, sans;
+  font-weight: bold;
+  color: var(--color-statusline2);
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+div.info {
+  color: var(--color-gray2);
+  font-size: 14px;
+  font-style: italic;
+}
+
+body pre {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  background: var(--color-gray0);
+  overflow-x: scroll;
+  padding: 10px 15px;
+}
+
+blockquote {
+  border-left: 10px solid var(--color-gray0);
+  margin-left: 0;
+  padding-left: 30px;
+  color: var(--color-fg);
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--color-gray0);
+}
+
+section.header {
+  margin: 0;
+  font-size: 16px;
+  padding-bottom: 15px;
+  color: var(--color-fg);
+  border-bottom: solid 1px var(--color-gray2);
+}
+
+.tag {
+  font-size: 0.8em;
+  display: inline-block;
+  padding-right: 5px;
+  color: var(--color-gray0);
+  white-space: nowrap;
+}
+
+.tag::before {
+  content: "#";
+  color: var(--color-gray2);
+}
+
+.tag a:link,
+.tag a:visited,
+.tag a:active {
+  color: var(--color-gray2);
+}
+
+.tag a:hover {
+  color: var(--color-blue);
+}
+
+code {
+  color: var(--color-fg);
+  font-size: 0.9em;
+  background: var(--color-gray1);
+  padding: 1px 4px;
+  border-radius: 5px;
+}
+
+a code {
+  text-decoration: underline;
+}
+
+pre code {
+  background-color: transparent;
+}
