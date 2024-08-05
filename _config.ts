@@ -27,4 +27,6 @@ site.copy("img");
 site.copy("fonts");
 site.copy("css");
 
+site.copy("_redirects"); // netlify redirects
+
 export default site;

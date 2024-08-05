@@ -1,0 +1,4 @@
+/notes/*  https://seth.computer/notes/:splat
+/posts/*  https://seth.computer/notes/:splat
+/links/*  https://seth.computer/links/:splat
+/tags/*   https://seth.computer/tags/:splat
