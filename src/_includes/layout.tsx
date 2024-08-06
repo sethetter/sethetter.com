@@ -4,13 +4,11 @@ type NavLink = {
   title: string;
 };
 const navLinks: NavLink[] = [
-  { url: "/posts", label: "posts", title: "Things I've written" },
-  { url: "/links", label: "links", title: "Links I've collected" },
-  // {
-  //   url: "/projects",
-  //   label: "projects",
-  //   title: "Things I've made or contributed to",
-  // },
+  {
+    url: "https://seth.computer",
+    label: "seth.computer",
+    title: "More stuff by Seth",
+  },
 ];
 
 export default ({ title, children }: Lume.Data) => (
@@ -55,38 +53,7 @@ export default ({ title, children }: Lume.Data) => (
 
       <footer id="footer">
         <p style="float: right; justify-text: right;">
-          RSS:{" "}
-          <a
-            href="https://sethetter.com/feed.rss"
-            title="Full RSS feed for sethetter.com"
-          >
-            {" "}
-            full
-          </a>
-          {", "}
-          <a
-            href="https://sethetter.com/posts.rss"
-            title="Posts RSS feed for sethetter.com"
-          >
-            {" "}
-            posts
-          </a>
-          {", "}
-          <a
-            href="https://sethetter.com/links.rss"
-            title="Links RSS feed for sethetter.com"
-          >
-            {" "}
-            links
-          </a>
-          {" | "}
-          <a
-            href="https://github.com/sethetter/sethetter.com"
-            title="sethetter.com source on GitHub"
-            target="_blank"
-          >
-            source
-          </a>
+          Updated: {Temporal.Now.plainDateISO().toString()}
         </p>
         <p>
           Created and maintained by{" "}
